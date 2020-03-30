@@ -1,7 +1,12 @@
 <h1>Welcome!</h1>
-<div>
-    Welcome {{name}} to our awesome App!
+<div class="container">
+    Welcome {{name}} to our awesome App! You can manage your todo's <a routerLink="/todos">here</a>
 </div>
-<div>
-    You can manage your todo's <a routerLink="/todos">here</a>
+<div class="container">
+    Click here to get a customized welcome message!
+    <button (click)="getWelcomeMessageWithParam()" class="btn btn-success">Get Welcome Message</button>
+</div>
+<div class="container" *ngIf="welcomeMessage">
+    <h2>Your customized welcome message</h2>
+    {{ welcomeMessage }}
 </div>
